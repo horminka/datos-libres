@@ -1,1 +1,13 @@
-{{ datos }}
+<h2>Adquisición de Datos</h2>
+
+<p>Por medio de un <a href="derecho de petición">derecho de petición</a> se solicitó a la Alcaldía de Neiva la información referente a los presupuestos públicos del municipio</p>
+
+<h2>Análisis de Datos</h2>
+
+<p>La Alcaldía de Neiva respondió la solicitud con los siguientes documentos.</p>
+
+<ul>
+  <li ng-repeat="dato in datos"><a ng-href="{{ dato.ruta }}">{{ dato.nombre }}</a></li>
+</ul>
+
+<p>Se está realizando un proceso de lectura de los documentos recibidos con el fin de entender la información suministrada.</p>

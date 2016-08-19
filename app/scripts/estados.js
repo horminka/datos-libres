@@ -6,8 +6,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
     templateUrl: 'views/inicio.html',
     controller: ['$scope',
       function($scope) {
-        $scope.inicio = "Acá va un descripción del proyecto"
-
+        $scope.titulo = "Presupuestos Públicos";
+        $scope.descripcion = "Alcaldía de Neiva";
       }
      ]
    })
@@ -17,8 +17,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
     templateUrl: 'views/datos.html',
     controller: ['$scope',
       function($scope) {
-        $scope.datos = "Acá se describen y enlazan los datos utilizados"
-
+        $scope.datos = [
+          { nombre: 'Ejecución de gastos a 31 de julio de 2016 (archivo xls)', ruta: 'docs/EJECUCION-DE-GASTOS-A-31-DE-JULIO-2016.xls' },
+          { nombre: 'Ejecución de ingresos a 31 de julio de 2016 (archivo xls)', ruta: 'docs/EJECUCION-DE-INGRESOS-A-21-DE-JULIO-2016.xls' }
+        ];
       }
      ]
    })
@@ -29,7 +31,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
     controller: ['$scope',
       function($scope) {
         $scope.graficos = "Acá se muestran los gráficos"
-
       }
      ]
    })
@@ -38,8 +39,15 @@ app.config(function($stateProvider, $urlRouterProvider) {
     templateUrl: 'views/info.html',
     controller: ['$scope',
       function($scope) {
-        $scope.info = "Acá va información adicional sobre el proyecto, formas de colaborar"
+        $scope.sitios = [
+          { nombre: 'GitHub', enlace: 'https://github.com/horminka/datos-libres'},
+          { nombre: 'PAD', enlace: 'https://public.etherpad-mozilla.org/p/horminka-data'}
+        ];
 
+        $scope.colaboradores = [
+          { nombre: 'HorMinka', imagen: ''},
+          { nombre: 'Alcaldía de Neiva', imagen: ''}
+        ];
       }
      ]
    })
