@@ -13,5 +13,6 @@ var app = angular.module('app', [
     'ngCookies',
     'ngSanitize',
     'ngTouch',
-    'ui.router'
+    'ui.router',
+    'chart.js'
   ]);

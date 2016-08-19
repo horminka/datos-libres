@@ -30,7 +30,35 @@ app.config(function($stateProvider, $urlRouterProvider) {
     templateUrl: 'views/graficos.html',
     controller: ['$scope',
       function($scope) {
-        $scope.graficos = "Acá se muestran los gráficos"
+
+        // Distribución Presupuesto
+        $scope.labelsdp = ["Infraestructura", "Cultura", "Seguridad", "Educación", "Salud", "Deuda"];
+        $scope.datadp = [300, 400, 200, 100, 500, 3000 ];
+        $scope.coloursdp = ['#eee528', '#570ee7', '#07e971', '#d4cb45', '#097900', '#2659a0'];
+        $scope.itemsdp = []
+        for (var i=0; i<$scope.labelsdp.length; i++) {
+          $scope.itemsdp.push(
+            {
+              label: $scope.labelsdp[i],
+              data: $scope.datadp[i],
+              color: $scope.coloursdp[i],
+            }
+          );
+        }
+
+        // Histórico Presupuesto
+        $scope.labelshp = ["2010", "2011", "2012", "2013", "2014", "2015", "2016"];
+        $scope.datahp = [
+          [28, 48, 40, 19, 86, 27, 90]
+        ];
+
+        // Gastos Ingresos
+        $scope.labels = ["2010", "2011", "2012", "2013", "2014", "2015", "2016"];
+        $scope.series = ['Gastos', 'Ingresos'];
+        $scope.data = [
+          [28, 48, 40, 19, 86, 27, 90],
+          [65, 59, 80, 81, 56, 55, 40],
+        ];
       }
      ]
    })
@@ -42,11 +70,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
         $scope.sitios = [
           { nombre: 'GitHub', enlace: 'https://github.com/horminka/datos-libres'},
           { nombre: 'PAD', enlace: 'https://public.etherpad-mozilla.org/p/horminka-data'}
-        ];
-
-        $scope.colaboradores = [
-          { nombre: 'HorMinka', imagen: ''},
-          { nombre: 'Alcaldía de Neiva', imagen: ''}
         ];
       }
      ]
